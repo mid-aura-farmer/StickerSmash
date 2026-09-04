@@ -1,9 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-export default function HomeScreen() {
+import ImageViewer from '@/components/imageViewer';
+
+const PlaceholderImage = require('@/assets/images/background-image.png');
+
+export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>This is the home screen</Text>
+      <View style={styles.imageContainer}>
+        <ImageViewer imgSource={PlaceholderImage} />
+      </View>
     </View>
   );
 }
@@ -11,16 +17,15 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     backgroundColor: '#25292e',
-    justifyContent: 'center',
+    alignItems: 'center',
   },
-  text: {
-    color: '#fff',
+  imageContainer: {
+    flex: 1,
   },
-  button: {
-    fontSize: 20,
-    textDecorationLine: 'underline',
-    color: '#fff',
+  image: {
+    width: 320,
+    height: 440,
+    borderRadius: 18,
   },
 });
