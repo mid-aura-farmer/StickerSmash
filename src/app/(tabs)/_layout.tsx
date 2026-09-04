@@ -6,6 +6,15 @@ export default function RootBottomTabs() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: '#ffd33d',
+        tabBarInactiveTintColor: '#fff',
+        headerStyle: {
+          backgroundColor: '#25292e',
+        },
+        headerShadowVisible: false,
+        headerTintColor: '#fff',
+        tabBarStyle: {
+          backgroundColor: '#25292e',
+        },
       }}>
       <Tabs.Screen
         name="index"
@@ -16,7 +25,19 @@ export default function RootBottomTabs() {
           ),
         }}
       />
-      <Tabs.Screen name="about" options={{ title: 'About' }} />
+      <Tabs.Screen
+        name="about"
+        options={{
+          title: 'About',
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name={focused ? 'information-circle' : 'information-circle-outline'}
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
